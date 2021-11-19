@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 30),
-        color: Colors.black,
+        color: Color(0xFFFF00FF),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
