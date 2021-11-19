@@ -9,7 +9,7 @@ class WelcomePage extends StatelessWidget {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: Colors.black
+          color: Color(0xFFFF00FF)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -17,29 +17,37 @@ class _RegisterPageState extends State<RegisterPage> {
       'Password': ''
     }
   ];
+  bool isPasswordVisible = false;
+  var txtName = TextEditingController();
+  var txtLastName = TextEditingController();
+  var txtUserName = TextEditingController();
+  var txtPass = TextEditingController();
+  int i = 0;
+  void _handleSubmit(){
+    var name = txtName.text;
+    var lastname = txtLastName.text;
+    var username = txtUserName.text;
+    var pass = txtPass.text;
+
+    data[i]['Name'] = name;
+    data[i]['LastName'] = lastname;
+    data[i]['UserName'] = username;
+    data[i]['Password'] = pass;
+    print(data);
+    setState(() {
+      i = i+1;
+      print(i);
+    });
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    txtName.addListener(()=> setState(() {}));
+  }
   @override
   Widget build(BuildContext context) {
-    var txtName = TextEditingController();
-    var txtLastName = TextEditingController();
-    var txtUserName = TextEditingController();
-    var txtPass = TextEditingController();
-    int i = 0;
-    void _handleSubmit(){
-      var name = txtName.text;
-      var lastname = txtLastName.text;
-      var username = txtUserName.text;
-      var pass = txtPass.text;
 
-      data[i]['Name'] = name;
-      data[i]['LastName'] = lastname;
-      data[i]['UserName'] = username;
-      data[i]['Password'] = pass;
-      print(data);
-      setState(() {
-        i = i+1;
-        print(i);
-      });
-    }
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -65,6 +73,11 @@ mainAxisAlignment: MainAxisAlignment.center,
                     fontSize: 20,
                   ),
                   decoration: InputDecoration(
+                    suffixIcon: txtName.text.isEmpty? Container(width: 0,):
+                    IconButton(
+                      icon: Icon(Icons.close),
+                      onPressed: ()=>txtName.clear(),
+                    ),
                       prefixIcon: Icon(Icons.person),
                       labelText: 'First Name',
                       labelStyle: TextStyle(
@@ -122,6 +135,14 @@ mainAxisAlignment: MainAxisAlignment.center,
                     fontSize: 20,
                   ),
                   decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      icon: isPasswordVisible
+                          ? Icon(Icons.visibility_off)
+                          : Icon(Icons.visibility),
+                      onPressed: () =>setState(() {
+                        isPasswordVisible = !isPasswordVisible;
+                      }),
+                    ),
                       prefixIcon: Icon(Icons.lock),
                       labelText: 'Password',
                       labelStyle: TextStyle(
@@ -132,6 +153,7 @@ mainAxisAlignment: MainAxisAlignment.center,
                       filled: true
 
                   ),
+                  obscureText: isPasswordVisible,
                 ),
                 const SizedBox(height: 20,),
                 Padding(
