@@ -23,7 +23,17 @@ class WelcomePage extends StatelessWidget {
               height: 30,
             ),
             Container(
-              child: Image.asset('assets/images/pix.jpg'),
+              margin: EdgeInsets.only(right: 5),
+              width: 500,
+              height: 300,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/pix.jpg')
+                ),
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(100),bottomRight: Radius.circular(100))
+              ),
+              // child: Image.asset('assets/images/pix.jpg'),
             ),
             Container(
               margin: EdgeInsets.only(top: 30),
@@ -31,16 +41,33 @@ class WelcomePage extends StatelessWidget {
               child: Row(
                 children: [
                   ElevatedButton(
-                      onPressed: (){
-                         Navigator.pushReplacementNamed(context, register);
+                      style: ElevatedButton.styleFrom(
+                        primary: Color(0xFF3d1559),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50)
+                        ),
+                        fixedSize: Size(
+                            100, 50),
+                      ),
+                      onPressed:(){
+                        Navigator.pushReplacementNamed(context, register);
                       },
-                      child: Text('Register')),
+                      child: Text('Signup',style: TextStyle(fontSize: 20),)),
                   Expanded(child: Container()),
                   ElevatedButton(
-                      onPressed: (){
-                        Navigator.pushReplacementNamed(context, login);
+                      style: ElevatedButton.styleFrom(
+                        primary: Color(0xFF3d1559),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50)
+                        ),
+                        fixedSize: Size(
+                            100, 50),
+                      ),
+                      onPressed:(){
+                        Navigator.pushNamed(context, login);
                       },
-                      child: Text('Login'))
+                      child: Text('Signin',style: TextStyle(fontSize: 20),))
+
                 ],
               ),
             )
