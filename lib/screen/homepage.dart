@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../colors.dart' as color;
  class HomePage extends StatelessWidget {
    const HomePage({Key? key}) : super(key: key);
 

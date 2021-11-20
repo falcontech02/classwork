@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import './' as color;
+import '../colors.dart' as color;
 import '../navigation.dart';
 
 class LoginPage extends StatefulWidget {
@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
-        color: const Color(0xFFFF00FF),
+        color: color.AppColor.background,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFF3d1559),width: 3),
+                      borderSide: BorderSide(color: color.AppColor.otherColor,width: 3),
                       borderRadius: BorderRadius.circular(29)
                   ),
                     border: OutlineInputBorder(

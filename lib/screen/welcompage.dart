@@ -1,4 +1,5 @@
 import 'package:classwork/navigation.dart';
+import '../colors.dart' as color;
 import 'package:flutter/material.dart';
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
