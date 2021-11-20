@@ -52,14 +52,14 @@ class _RegisterPageState extends State<RegisterPage> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         // padding: const EdgeInsets.symmetric(horizontal: 30),
-        color: Colors.black,
+        color: Color(0xFFFF00FF),
         child: Center(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * .50,
             decoration: BoxDecoration(
-                color: Colors.white,
+                // color: Colors.white,
               borderRadius: BorderRadius.circular(20)
             ),
             child: Column(
@@ -73,6 +73,13 @@ mainAxisAlignment: MainAxisAlignment.center,
                     fontSize: 20,
                   ),
                   decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xFF3d1559),width: 3),
+                          borderRadius: BorderRadius.circular(29)
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(29)
+                      ),
                     suffixIcon: txtName.text.isEmpty? Container(width: 0,):
                     IconButton(
                       icon: Icon(Icons.close),
@@ -89,6 +96,7 @@ mainAxisAlignment: MainAxisAlignment.center,
 
                   ),
                 ),
+                const SizedBox(height: 15,),
                 TextField(
                   keyboardType: TextInputType.text,
                   controller: txtLastName,
@@ -97,6 +105,13 @@ mainAxisAlignment: MainAxisAlignment.center,
                     fontSize: 20,
                   ),
                   decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xFF3d1559),width: 3),
+                          borderRadius: BorderRadius.circular(29)
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(29)
+                      ),
                       prefixIcon: Icon(Icons.person),
                       labelText: 'Last Name',
                       labelStyle: TextStyle(
@@ -108,6 +123,7 @@ mainAxisAlignment: MainAxisAlignment.center,
 
                   ),
                 ),
+                const SizedBox(height: 15,),
                 TextField(
                   keyboardType: TextInputType.text,
                   controller: txtUserName,
@@ -116,6 +132,13 @@ mainAxisAlignment: MainAxisAlignment.center,
                     fontSize: 20,
                   ),
                   decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Color(0xFF3d1559),width: 3),
+                          borderRadius: BorderRadius.circular(29)
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(29)
+                      ),
                       prefixIcon: Icon(Icons.person),
                       labelText: 'UserName',
                       labelStyle: TextStyle(
@@ -127,6 +150,7 @@ mainAxisAlignment: MainAxisAlignment.center,
 
                   ),
                 ),
+                const SizedBox(height: 15,),
                 TextField(
                   keyboardType: TextInputType.text,
                   controller: txtPass,
@@ -135,6 +159,13 @@ mainAxisAlignment: MainAxisAlignment.center,
                     fontSize: 20,
                   ),
                   decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xFF3d1559),width: 3),
+                          borderRadius: BorderRadius.circular(29)
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(29)
+                      ),
                     suffixIcon: IconButton(
                       icon: isPasswordVisible
                           ? Icon(Icons.visibility_off)
@@ -162,18 +193,31 @@ mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(
                         children: [
-                          Text('Already have an Account'),
+                          Text('Already have an Account',style: TextStyle(
+                            color: Colors.white
+                          ),),
                           SizedBox(width: 5,),
                           InkWell(
                             onTap: ()=>Navigator.pushNamed(context, login),
-                            child: Text('Signin',style: TextStyle(color: Colors.blue),),
+                            child: Text('Signin',style: TextStyle(
+                                color: Color(0xFF3d1559),fontSize: 20,
+                                fontWeight: FontWeight.bold),),
                           )
                         ],
                       ),
                       Expanded(child: Container()),
                       ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xFF3d1559),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50)
+                            ),
+                            fixedSize: Size(
+                                100, 50),
+                          ),
                           onPressed: _handleSubmit,
-                          child: Text('Submit'))
+                          child: Text('Submit',style: TextStyle(fontSize: 20),))
+
                     ],
                   ),
                 )
