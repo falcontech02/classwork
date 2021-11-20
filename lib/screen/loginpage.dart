@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// import './' as color;
 import '../navigation.dart';
 
 class LoginPage extends StatefulWidget {
