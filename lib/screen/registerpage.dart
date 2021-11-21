@@ -29,15 +29,7 @@ class _RegisterPageState extends State<RegisterPage> {
     var username = txtUserName.text;
     var pass = txtPass.text;
 
-    data[i]['Name'] = name;
-    data[i]['LastName'] = lastname;
-    data[i]['UserName'] = username;
-    data[i]['Password'] = pass;
-    print(data);
-    setState(() {
-      i = i+1;
-      print(i);
-    });
+
   }
   @override
   void initState() {
