@@ -47,23 +47,25 @@ class _RegisterPageState extends State<RegisterPage> {
   }
   @override
   Widget build(BuildContext context) {
-
+ var size = MediaQuery.of(context).size;
+ print(size.height);
     return Scaffold(
       body: Container(
-        width: MediaQuery.of(context).size.width,
+        width: size.width,
+        height: size.height,
         // padding: const EdgeInsets.symmetric(horizontal: 30),
         color: Color(0xFFFF00FF),
         child: Center(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * .50,
+            width: size.width,
+            height: size.height ,
             decoration: BoxDecoration(
                 // color: Colors.white,
               borderRadius: BorderRadius.circular(20)
             ),
             child: Column(
-mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 TextField(
                   keyboardType: TextInputType.text,
@@ -182,7 +184,6 @@ mainAxisAlignment: MainAxisAlignment.center,
                       ),
                       fillColor: Colors.white,
                       filled: true
-
                   ),
                   obscureText: isPasswordVisible,
                 ),
@@ -216,7 +217,7 @@ mainAxisAlignment: MainAxisAlignment.center,
                                 100, 50),
                           ),
                           onPressed: _handleSubmit,
-                          child: Text('Submit',style: TextStyle(fontSize: 20),))
+                          child: Text('Submit',style: TextStyle(fontSize: 16),))
 
                     ],
                   ),
