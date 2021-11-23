@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import '../colors.dart' as color;
  class HomePage extends StatelessWidget {
@@ -36,7 +36,7 @@ import '../colors.dart' as color;
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
                      Container(
-                         width: size.width * .90,
+                         width: size.width * .60,
                          height: size.height * .30,
                          decoration: BoxDecoration(
                            borderRadius: BorderRadius.circular(20),
@@ -49,7 +49,7 @@ import '../colors.dart' as color;
                      ),
                      SizedBox(width: 10,),
                      Container(
-                         width: size.width * .90,
+                         width: size.width * .60,
                          height: size.height * .30,
                          decoration: BoxDecoration(
                              image: DecorationImage(
@@ -62,7 +62,7 @@ import '../colors.dart' as color;
                      ),
                      SizedBox(width: 10,),
                      Container(
-                         width: size.width * .90,
+                         width: size.width * .60,
                          height: size.height * .30,
                          decoration: BoxDecoration(
                              image: DecorationImage(
@@ -75,7 +75,7 @@ import '../colors.dart' as color;
                      ),
                      SizedBox(width: 10,),
                      Container(
-                         width: size.width * .90,
+                         width: size.width * .60,
                          height: size.height * .30,
                          decoration: BoxDecoration(
                              image: DecorationImage(
@@ -91,6 +91,37 @@ import '../colors.dart' as color;
 
                  ],
                )),
+               SizedBox(height: 20,),
+               Align(
+                 alignment: Alignment.centerLeft,
+                 child: Text('Gallery',style: TextStyle(
+                   fontSize: 29,
+                   fontWeight: FontWeight.bold
+                 ),),
+               ),
+               SizedBox(height: 20,),
+               Expanded(
+                 flex: 2,
+                 child: GridView.count(
+                     crossAxisCount: 2,
+                   children: List.generate(30, (index) {
+                     return Card(
+                       margin: const EdgeInsets.all(7.0),
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(30)
+                       ),
+                       elevation: 10.0,
+                       child: Container(
+                         decoration: BoxDecoration(
+                             borderRadius: BorderRadius.circular(30),
+                           image: DecorationImage(image: AssetImage('assets/images/me.jpg'),
+                           fit: BoxFit.fill)
+                         ),
+                       ),
+                     );
+                   }),
+                 ),
+               )
 
 
              ],
